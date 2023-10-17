@@ -4,7 +4,7 @@
 {% block content %}
 
 
-<section class="section-content padding-y bg">
+<section class="section-content padding-y full-heigth">
 <div class="container">
 
 <!-- ============================ COMPONENT 1 ================================= -->
@@ -12,7 +12,7 @@
 	<h2 class="text-center">Your Shopping Cart is Empty</h2>
 	<br>
 	<div class="text-center">
-		<a href="{% url 'store' %}" class="btn btn-primary">Continue Shopping</a>
+		<a href="{% url 'store' %}" class="btn btn-primary new-btn-color">Continue Shopping</a>
 	</div>
 {% else %}
 <div class="row">
@@ -48,19 +48,19 @@
 	</td>
 	<td>
 		<!-- col.// -->
-					<div class="col">
-						<div class="input-group input-spinner">
+					<div class="col ">
+						<div class="input-group input-spinner" style="margin-left: -15px;">
 							<div class="input-group-prepend">
-							<a href="{% url 'remove_cart' cart_item.product.id cart_item.id %}" class="btn btn-light" type="button" id="button-plus"> <i class="fa fa-minus"></i> </a>
+							<a href="{% url 'remove_cart' cart_item.product.id cart_item.id %}" class="btn btn-light black-color no-border mr-1" type="button" id="button-plus"> <i class="fa fa-minus"></i> </a>
 							</div>
-							<input type="text" class="form-control"  value="{{ cart_item.quantity }}">
+							<input type="text" class="form-control black-color border" style="border-radius: 5px !important;"  value="{{ cart_item.quantity }}">
 							<div class="input-group-append">
 								<form action="{% url 'add_cart' cart_item.product.id %}" method="POST">
 									{% csrf_token %}
 									{% for item in cart_item.variations.all %}
 										<input type="hidden" name="{{ item.variation_category | lower }}" value="{{ item.variation_value | capfirst }}">
 									{% endfor %}
-									<button class="btn btn-light" type="submit" id="button-minus"> <i class="fa fa-plus"></i> </button>
+									<button class="btn btn-light black-color no-border ml-1"  type="submit" id="button-minus"> <i class="fa fa-plus"></i> </button>
 								</form>
 							</div>
 						</div> <!-- input-group.// -->
@@ -104,7 +104,7 @@
 				<img src="{% static './images/misc/payments.png' %}" height="26">
 			</p>
 			<a href="{% url 'checkout' %}" class="btn btn-primary btn-block"> Checkout </a>
-			<a href="{% url 'store' %}" class="btn btn-light btn-block">Continue Shopping</a>
+			<a href="{% url 'store' %}" class="btn btn-light btn-block new-btn-color">Continue Shopping</a>
 		</div> <!-- card-body.// -->
 		</div> <!-- card.// -->
 

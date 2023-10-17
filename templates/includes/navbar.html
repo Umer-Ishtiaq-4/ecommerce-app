@@ -33,7 +33,7 @@
             <button type="button" class="btn btn-primary dropdown-toggle new-btn-color" data-toggle="dropdown">
               <i class="fa"></i> Categories
             </button>
-            <div class="dropdown-menu">
+            <div class="dropdown-menu mt-1">
               <a class="dropdown-item" href="{% url 'store' %}">All Products </a>
               {% for category in links %}
               <a class="dropdown-item" href="{{ category.get_url }}">{{ category.category_name }} </a>
