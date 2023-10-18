@@ -7,11 +7,20 @@
 
 <!-- ========================= SECTION MAIN ========================= -->
 <section class="section-intro padding-y-sm">
-	<div class="container">
+	<div class="">
 
-		<div class="intro-banner-wrap">
-			<img src="{% static 'images/banners/cover.jpg' %}" class="img-fluid rounded">
-		</div>
+		<div class="intro-banner-wrap d-flex justify-content-center position-relative" style="width: 100vw;">
+			<img src="{% static 'images/banners/hero-banner.jpg' %}" class="img-fluid rounded not-pixeled" style="width: 80%; max-height: 70vh;">
+		  
+			<!-- Shadow overlay -->
+			<div class="shadow-overlay"></div>
+		  
+			<!-- Shop Here button -->
+			<div class="shop-button">
+			  <a href="{% url 'store' %}" class="btn-outline-primary-hero">Shop Here</a>
+			</div>
+		  </div>
+		  
 
 	</div> <!-- container //  -->
 </section>
