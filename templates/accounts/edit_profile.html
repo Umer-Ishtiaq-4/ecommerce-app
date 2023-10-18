@@ -3,22 +3,22 @@
 
 {% block content %}
 
-<section class="section-conten padding-y bg">
+<section class="section-conten padding-y full-height">
 
 {% include 'includes/alerts.html' %}
 <div class="container">
-	<div class="row">
 	{% include 'includes/dashboard_sidebar.html' %}
+	<div class="row">
 	<main class="col-md-9">
 		<article class="card">
 		<header class="card-header">
-			<strong class="d-inline-block mr-3">Edit your profile</strong>
-
+			<div class="d-flex flex-column align-items-center">
+				<img src="{{userprofile.profile_picture.url}}" alt="Profile Picture" width="100" style="border-radius:50px;">
+				<strong class="d-inline-block mr-3">Edit your profile</strong>
+			</div>
 		</header>
 		<div class="card-body">
-			<div class="text-right">
-				<img src="{{userprofile.profile_picture.url}}" alt="Profile Picture" width="100" style="border-radius:50px;">
-			</div>
+			
 			<div class="row">
 			<div class="col-md-12">
 				<form action="{% url 'edit_profile' %}" method="POST" enctype="multipart/form-data">
@@ -65,7 +65,7 @@
 							{{profile_form.country}}
 						</div>
 					</div>
-					<input type="submit" value="Save" class="btn btn-primary">
+					<input type="submit" value="Save Data" class="btn btn-primary new-btn-color">
 				</form>
 			</div>
 

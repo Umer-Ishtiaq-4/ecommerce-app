@@ -1,12 +1,32 @@
-<aside class="col-md-3">
+<style>
+  .active{
+    background: #FD2407 !important;
+  }
+  .list-group-item {
+  border-top-left-radius: 0px !important;
+  border-top-right-radius: 0px !important;
+}
+  .list-group-item {
+  border-bottom-right-radius: 0px !important;
+  border-bottom-left-radius: 0px !important;
+}
+</style>
+<aside class="row-md-3">
   <!--   SIDEBAR   -->
-  <ul class="list-group">
-    <a class="list-group-item {% if '/accounts/' == request.path %}active{% endif %}" href="{% url 'dashboard' %}"> Dashboard </a>
-    <a class="list-group-item {% if '/my_orders/' in request.path %}active{% endif %}" href="{% url 'my_orders' %}"> My Orders </a>
-    <a class="list-group-item {% if '/edit_profile/' in request.path %}active{% endif %}" href="{% url 'edit_profile' %}"> Edit Profile </a>
-    <a class="list-group-item {% if '/change_password/' in request.path %}active{% endif %}" href="{% url 'change_password' %}"> Change Password </a>
+  <!-- <ul class="list-group d-flex flex-row p-0 m-0 ">
+    <a class="list-group-item black-color border {% if '/accounts/' == request.path %}active{% endif %}" href="{% url 'dashboard' %}"> Dashboard </a>
+    <a class="list-group-item black-color border {% if '/my_orders/' in request.path %}active{% endif %}" href="{% url 'my_orders' %}"> My Orders </a>
+    <a class="list-group-item black-color border {% if '/edit_profile/' in request.path %}active{% endif %}"  href="{% url 'edit_profile' %}"> Edit Profile </a>
+    <a class="list-group-item black-color border {% if '/change_password/' in request.path %}active{% endif %}"  href="{% url 'change_password' %}"> Change Password </a>
+    <a class="list-group-item black-color border ml-3 new-btn" href="{% url 'logout' %}"><span class="text">Log out</span> </a>
+  </ul> -->
+  <ul class="list-group d-flex flex-row p-0 m-0 ">
+    <a class="list-group-item black-color border {% if '/accounts/' == request.path %}active{% endif %}" href="{% url 'dashboard' %}"><i class="fa fa-info-circle" aria-hidden="true"></i> </a>
+    <a class="list-group-item black-color border {% if '/my_orders/' in request.path %}active{% endif %}" href="{% url 'my_orders' %}"><i class="fa fa-history" aria-hidden="true"></i> </a>
+    <a class="list-group-item black-color border {% if '/edit_profile/' in request.path %}active{% endif %}"  href="{% url 'edit_profile' %}"><i class="fa fa-address-card" ></i> </a>
+    <a class="list-group-item black-color border {% if '/change_password/' in request.path %}active{% endif %}"  href="{% url 'change_password' %}"> <i class="fa fa-key" aria-hidden="true"></i> </a>
+    <a class="list-group-item black-color border ml-3 btn-outline-primary" href="{% url 'logout' %}"><i class="fa fa-power-off" aria-hidden="true"></i> </a>
   </ul>
   <br>
-  <a class="btn btn-light btn-block" href="{% url 'logout' %}"> <i class="fa fa-power-off"></i> <span class="text">Log out</span> </a>
   <!--   SIDEBAR .//END   -->
 </aside>
