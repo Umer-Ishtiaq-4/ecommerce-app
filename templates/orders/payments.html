@@ -4,15 +4,15 @@
 {% block content %}
 
 
-<section class="section-content padding-y bg">
+<section class="section-content padding-y">
 	<div class="container">
 
 		<!-- ============================ COMPONENT 1 ================================= -->
-		<h4 class="text-center mb-20">Review Your Order and Make Payment</h4>
+		<h4 class="mb-20">Review Your Order and Make Payment</h4>
 		<div class="row">
 
 			<aside class="col-lg-8">
-				<div class="card">
+				<div class="card mb-2">
 					<h5 class="card-header">Billing Address</h5>
 					<div class="card-body">
 						<p class="card-text mb-0">{{order.full_name}}</p>
@@ -27,23 +27,22 @@
 
 
 					</div>
-				</div>
-				<div class="card">
-					<h5 class="card-header">Payment Method</h5>
-					<div class="card-body">
-						<p class="card-text">PayPal</p>
-
+					<div class="card-header">
+						<h5 class="">Payment Method</h5>
+						<p class="d-flex align-items-center">COD</p>
+						
 					</div>
 				</div>
+				
 				<div class="card">
 					<h5 class="card-header">Review Products</h5>
 					<div class="card-body">
 						<table class="table table-borderless table-shopping-cart">
 							<thead class="text-muted">
 								<tr class="small text-uppercase">
-									<th scope="col">Product</th>
-									<th scope="col" width="120">Quantity</th>
-									<th scope="col" width="120">Price</th>
+									<th scope="col" class="text-white">Product</th>
+									<th scope="col" class="text-white" width="150">Quantity</th>
+									<th scope="col" class="text-white" width="150">Price</th>
 
 								</tr>
 							</thead>
@@ -68,7 +67,7 @@
 									</td>
 									<td>
 										<!-- col.// -->
-										<label for="">{{cart_item.quantity}}</label>
+										<label for="" class="text-white">{{cart_item.quantity}}</label>
 									</td>
 									<td>
 										<div class="price-wrap">
@@ -89,7 +88,7 @@
 			</aside> <!-- col.// -->
 			<aside class="col-lg-4">
 
-				<div class="card">
+				<div class="card mt-md-0 mt-sm-2">
 					<div class="card-body">
 						<dl class="dlist-align">
 							<dt>Total price:</dt>
@@ -101,17 +100,17 @@
 						</dl>
 						<dl class="dlist-align">
 							<dt>Grand Total:</dt>
-							<dd class="text-right text-dark b"><strong>$ {{grand_total}}</strong></dd>
+							<dd class="text-right text-dark b text-white"><strong>$ {{grand_total}}</strong></dd>
 						</dl>
 						<hr>
-						<p class="text-center mb-3">
+						<!-- <p class="mb-3">
 							<img src="{% static './images/misc/payments.png' %}" height="26">
-						</p>
+						</p> -->
 
 
 						<div id="paypal-button-container">
 							<!-- PayPal Button Will Load -->
-							<button id="place-order-btn" class="btn btn-primary">Place Order</button>
+							<button id="place-order-btn" class="btn btn-primar new-btn-color text-white">Place Order</button>
 						</div>
 
 					</div> <!-- card-body.// -->
