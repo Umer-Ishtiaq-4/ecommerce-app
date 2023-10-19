@@ -1,77 +1,87 @@
 {% load static %}
+<style>
+  @media (max-width: 992px) {
+    .unique-flex {
+      display: flex !important;
+      flex-direction: row !important;
+      justify-content: space-between !important;
+      align-items: center !important;
+      flex-wrap: nowrap !important;
+    }
+    .logo{
+      max-width: 200px;
+    }
+  }
 
+</style>
 
 
 <div class="d-flex justify-content-center align-items-center announcement-banner">== Website Under Progress == </div>
 <header class="section-header">
-
-
   <section class="header-main">
     <div class="container custom_container">
       <div class="row align-items-center">
-        <div class="col-lg-4 col-md-3 col-6">
+        <!-- Brand Logo -->
+        <div class="col-lg-4 col-md-3">
           <a href="{% url 'home' %}" class="brand-wraper">
             <img class="logo" src="{% static './images/shop-logo.png' %}">
-          </a> <!-- brand-wrap.// -->
+          </a>
         </div>
-        <div class="col-lg  col-md-6 col-sm-12 col">
+        <!-- Search Input -->
+        <div class="col-lg-4 col-md-3">
           <form action="{% url 'search' %}" class="search" method='GET'>
-            <div class="input-group w-100">
-              <input type="text" class="form-control search-input" style="width:60%;" placeholder="Search"
-                name="keyword" required>
-
+            <div class="input-group">
+              <input type="text" class="form-control search-input" placeholder="Search" name="keyword" required>
               <div class="input-group-append">
                 <button class="btn btn-primary black-bg" type="submit">
                   <i class="fa fa-search"></i>
                 </button>
               </div>
             </div>
-          </form> <!-- search-wrap .end// -->
-        </div> <!-- col.// -->
-        <div class="col-lg col-sm col-md col-6 flex-grow-0 ">
-          <div class="category-wrap dropdown d-inline-block float-right">
+          </form>
+        </div>
+        <!-- Categories Button -->
+        <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
+          <div class="category-wrap dropdown d-inline-block">
             <button type="button" class="btn btn-primary dropdown-toggle new-btn-color" data-toggle="dropdown">
               <i class="fa"></i> Categories
             </button>
-            <div class="dropdown-menu mt-1">
+            <div class="dropdown-menu mt-4">
               <a class="dropdown-item" href="{% url 'store' %}">All Products </a>
               {% for category in links %}
               <a class="dropdown-item" href="{{ category.get_url }}">{{ category.category_name }} </a>
               {% endfor %}
             </div>
-          </div> <!-- category-wrap.// -->
-        </div> <!-- col.// -->
-        <!-- <a href="{% url 'store' %}" class="btn btn-outline-primary">Store</a> -->
-
-        <div class="col-lg-3 col-sm-6 col-8 order-2 order-lg-3">
-          <div class="d-flex justify-content-end mb-3 mb-lg-0">
+          </div>
+        </div>
+        <!-- Login and Cart -->
+        <div class="col-lg-2 col-md-3 col-sm-6 col-xs-6">
+          <div class="d-flex justify-content-end">
             {% if user.id is None %}
             <div class="d-flex align-items-center">
-              <a class="cust_anchor mr-2" href="{% url 'login' %}">Sign in</a> <span class="dark-transp"> | </span>
+              <a class="cust_anchor mr-2" href="{% url 'login' %}">Sign in</a>
+              <span class="dark-transp"> | </span>
               <a class="cust_anchor ml-2" href="{% url 'register' %}"> Register</a>
             </div>
-
             {% else %}
             <div class="d-flex align-items-center">
-              <div>
-                <a class="cust_anchor mr-2" href="{% url 'dashboard' %}">Dashboard</a> <span class="dark-transp"> |
-                </span>
-                <a class="cust_anchor ml-2" href=" {% url 'logout' %}"> Logout</a>
-              </div>
+              <a class="cust_anchor mr-2" href="{% url 'dashboard' %}">Dashboard</a>
+              <span class="dark-transp mr-2"> | </span>
+              <a class a="cust_anchor" href="{% url 'logout' %}"> Logout</a>
             </div>
             {% endif %}
             <a href="{% url 'cart' %}" class="widget-header pl-3 ml-3 cart_anchor">
               <div class="icon icon-sm rounded-circle border"><i class="fa fa-shopping-cart icon cart_anchor"></i></div>
               <span class="badge badge-pill badge-danger notify">{{cart_count}}</span>
             </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
 
-          </div> <!-- widgets-wrap.// -->
-
-        </div> <!-- col.// -->
-      </div> <!-- row.// -->
-    </div> <!-- container.// -->
-  </section> <!-- header-main .// -->
-
+  
 
 
 

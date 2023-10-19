@@ -227,7 +227,7 @@ article:after,
 }
 
 /* -------------------- small grid gutter --------------------- */
-.row-sm {
+/* .row-sm {
   margin-right: -7px;
   margin-left: -7px;
   display: flex;
@@ -237,7 +237,7 @@ article:after,
 .row-sm > [class^=col] {
   padding-left: 7px;
   padding-right: 7px;
-}
+} */
 
 .bg {
   background-color: #f8f9fa;
