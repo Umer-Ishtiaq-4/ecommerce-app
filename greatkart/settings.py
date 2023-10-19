@@ -94,24 +94,24 @@ AUTH_USER_MODEL = 'accounts.Account'
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 # Database Configuration
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'railway',
-#         'USER': 'postgres',
-#         'PASSWORD': 'KadpGNlJBIN0aZgsVbsX',
-#         'HOST': 'containers-us-west-207.railway.app',  # You can change this to your PostgreSQL server's host if it's not on localhost
-#         'PORT': '5650',  # You can specify the port if PostgreSQL is running on a non-default port
-#     }
-# }
-
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',  # The name of the SQLite database file
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'railway',
+        'USER': 'postgres',
+        'PASSWORD': 'KadpGNlJBIN0aZgsVbsX',
+        'HOST': 'containers-us-west-207.railway.app',  # You can change this to your PostgreSQL server's host if it's not on localhost
+        'PORT': '5650',  # You can specify the port if PostgreSQL is running on a non-default port
     }
 }
+
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',  # The name of the SQLite database file
+#     }
+# }
 
 
 
